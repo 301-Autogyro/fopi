@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,visualstudiocode
 
+# My ignore
+Практическое занятие 1
+Практическое занятие 2
+
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/

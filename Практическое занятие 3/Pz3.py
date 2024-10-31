@@ -1,5 +1,5 @@
 from ConsistentFunc import CoderFunc as coder
-from ShannonFanoFunc import ShannonFano as Fano
+from ShannonFanoFunc import ShannonFano as Fano, Symbol
 from prettytable import PrettyTable
 
 # Исходная фраза
@@ -22,12 +22,13 @@ print('Сравнение строк:', decode_phrase == phrase)
 
 print('\n---\n')
 # Создание таблицы вероятности появления каждой из букв
+sym: Symbol
 # Указываем заголовки страницы
 head = head = ['Буква', 'Вероятность', 'Бин код']
 # Создаём объект таблицы
 table = PrettyTable(head)
 for sym in fano.syms:
     # Сборка таблицы
-    table.add_row([sym.key, sym.ver, sym.bincode])
+    table.add_row([f'"{sym.key}"', round(sym.ver, 4), sym.bincode])
 
 print(table)

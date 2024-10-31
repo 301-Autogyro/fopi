@@ -2,9 +2,13 @@ from ShannonFanoFunc import ShannonFano as Fano, Symbol
 
 class CoderFunc():   
     def encoder(phrase: str, syms: list[Symbol]):
-        # Кодировщик
+        '''
+        Кодирование фразы по известному алфавиту
+            `phrase: str` - фраза (набор символов)
+            `syms: list[Symbol]` - алфавит кодировок
+        '''
 
-        # Делаем замену символа в соотв. с нашим бинарным алфавитом (кодировкой)
+        # Делаем замену символа на бинарный код в соотв. с алфавитом (кодировкой)
         for sym in syms:
             phrase = phrase.replace(sym.key, '+' + sym.bincode + '+')
 
@@ -13,8 +17,13 @@ class CoderFunc():
         return phrase
 
     def decoder(phrase: str, syms: list[Symbol]):
-        # Декодер
+        '''
+        Декодирование фразы по известному алфавиту
+            `phrase: str` - фраза (набор бинарных кодов)
+            `syms: list[Symbol]` - алфавит кодировок
+        '''
 
+        # Делаем замену бинарного кода на символ в соотв. с алфавитом (кодировкой)
         for sym in syms:
             phrase = phrase.replace(sym.bincode, sym.key)
 
